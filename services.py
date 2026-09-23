@@ -14,10 +14,16 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 import io
 import math
-from backend.data import (
-    TN_DISTRICTS, CROP_DB, CROP_IDEAL, HISTORICAL_YIELD,
-    MANDI_PRICES, GOVT_SCHEMES, PEST_DISEASE_DB, EQUIPMENT_RATES, TAMIL_TRANSLATIONS, CROP_AGRONOMY
-)
+try:
+    from backend.data import (
+        TN_DISTRICTS, CROP_DB, CROP_IDEAL, HISTORICAL_YIELD,
+        MANDI_PRICES, GOVT_SCHEMES, PEST_DISEASE_DB, EQUIPMENT_RATES, TAMIL_TRANSLATIONS, CROP_AGRONOMY
+    )
+except ImportError:
+    from data import (
+        TN_DISTRICTS, CROP_DB, CROP_IDEAL, HISTORICAL_YIELD,
+        MANDI_PRICES, GOVT_SCHEMES, PEST_DISEASE_DB, EQUIPMENT_RATES, TAMIL_TRANSLATIONS, CROP_AGRONOMY
+    )
 
 
 # ─────────────────────────────────────────────────────────────────────────────
